@@ -1,0 +1,679 @@
+/* =========================================
+   1. ASAS & VARIABLE (JANGAN UBAH)
+   ========================================= */
+:root {
+    --bg-pink: #f9d4d8;
+    --navy: #4b2e2a;
+    --blue: #aed9f8;
+    --yellow: #fff0a2;
+    --pink-bright: #ff71a2;
+    --peach: #f8bbd0;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Montserrat', sans-serif;
+    color: var(--navy);
+    overflow-x: hidden;
+}
+
+/* =========================================
+   2. NAVIGATION (KEKAL SEPERTI ASAL)
+   ========================================= */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 5%;
+    background: white;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+}
+
+.logo { font-weight: 900; font-size: 1.2rem; }
+
+.nav-links { display: flex; gap: 10px; }
+
+.nav-btn {
+    text-decoration: none;
+    padding: 8px 15px;
+    border-radius: 20px;
+    font-size: 0.7rem;
+    font-weight: bold;
+    color: var(--navy);
+}
+
+.nav-btn.blue { background: var(--blue); }
+.nav-btn.yellow { background: var(--yellow); }
+.nav-btn.pink { background: var(--peach); }
+.nav-btn.blue-light { background: #d0ebff; }
+.nav-btn.outline { border: 1px solid var(--navy); }
+
+footer p {
+    margin: 0;
+    text-align: center;
+}
+
+/* --- FIXED NAVIGATION CLOCK STYLE --- */
+
+.nav-clock {
+    font-size: 0.75rem;
+    font-weight: 700;
+    color: #4b2e2a;
+    background: #ffffff;
+    padding: 6px 14px;
+    border-radius: 999px;
+    border: 1.5px solid #ff71a2;
+    box-shadow: 0 3px 8px rgba(0,0,0,0.08);
+    font-family: 'Montserrat', sans-serif;
+    letter-spacing: 0.4px;
+    white-space: nowrap;
+}
+/* ===== IMUT LIVE CLOCK (GRADIENT PINK) ===== */
+.nav-clock {
+    font-size: 0.75rem;
+    font-weight: 700;
+    color: #4b2e2a;
+    background: linear-gradient(135deg, #ffd1dc, #ffe6ee);
+    padding: 8px 16px;
+    border-radius: 50px;
+    border: 1.5px solid #ff71a2;
+    box-shadow: 0 4px 10px rgba(255,113,162,0.35);
+    font-family: 'Montserrat', sans-serif;
+    letter-spacing: 0.4px;
+    white-space: nowrap;
+    animation: floatClock 3s ease-in-out infinite;
+}
+
+/* Gerak lembut */
+@keyframes floatClock {
+    0% { transform: translateY(0); }
+    50% { transform: translateY(-3px); }
+    100% { transform: translateY(0); }
+}
+
+/* Phone kecil → sorok */
+@media (max-width: 850px) {
+    .nav-clock {
+        display: none;
+    }
+}
+
+/* =========================================
+   3. INDEX / HOME PAGE
+   ========================================= */
+.hero { padding: 50px 5%; display: flex; justify-content: center; background-color: var(--bg-pink); }
+.hero-container { display: grid; grid-template-columns: 1fr 1fr; align-items: center; max-width: 1100px; }
+.hero-content h1 { font-size: 3rem; line-height: 1; margin: 20px 0; }
+.highlight { background: var(--blue); padding: 0 10px; border-radius: 5px; display: inline-block; transform: rotate(-2deg); }
+
+.scalloped-image {
+    width: 400px; height: 400px; overflow: hidden;
+    -webkit-mask-image: url('data:image/svg+xml;utf8,<svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg"><path fill="black" d="M40,-60C53.3,-53.3,66.7,-46.7,75.3,-35.3C84,-24,88,-8,85.3,6.7C82.7,21.3,73.3,34.7,62.7,45.3C52,56,40,64,26.7,70.7C13.3,77.3,-1.3,82.7,-16.7,80.7C-32,78.7,-48,69.3,-58.7,56C-69.3,42.7,-74.7,25.3,-76.7,6.7C-78.7,-12,-77.3,-32,-68,-48C-58.7,-64,-41.3,-76,-25.3,-80.7C-9.3,-85.3,5.3,-82.7,40,-60Z" transform="translate(100 100)" /></svg>');
+    -webkit-mask-size: contain; mask-image: url('...'); mask-size: contain;
+}
+.scalloped-image img { width: 100%; height: 100%; object-fit: cover; }
+
+.ticker { background: var(--navy); color: white; padding: 10px 0; overflow: hidden; white-space: nowrap; }
+.ticker-text { display: inline-block; padding-left: 100%; animation: marquee 20s linear infinite; font-weight: bold; }
+@keyframes marquee { 0% { transform: translate(0, 0); } 100% { transform: translate(-100%, 0); } }
+
+/* =========================================
+   4. PROFILE PAGE (ABOUT ME)
+   ========================================= */
+.profile-page { background-color: #fdf2f4; }
+.profile-section-new { padding: 60px 20px; background-image: url('checkered.jpg'); background-repeat: repeat; display: flex; justify-content: center; }
+.profile-card { background: white; padding: 40px; border-radius: 15px; max-width: 900px; width: 100%; box-shadow: 0 5px 15px rgba(0,0,0,0.05); }
+.profile-header-content { display: flex; align-items: center; gap: 40px; }
+.profile-frame { width: 300px; height: 350px; border: 1px solid #ddd; padding: 10px; background: white; }
+.profile-frame img { width: 100%; height: 100%; object-fit: cover; }
+.title-get-to-know { font-family: 'Playfair Display', serif; font-size: 3.2rem; color: #b2ce95; }
+
+/* =========================================
+   5. EDUCATION PAGE
+   ========================================= */
+.edu-page { background-color: #dcecc9 !important; }
+.edu-section { padding: 60px 20px; max-width: 900px; margin: 0 auto; text-align: center; }
+.edu-card { background: white; display: flex; align-items: center; justify-content: space-between; padding: 25px; border-radius: 20px; margin-bottom: 20px; text-align: left; }
+.edu-image img { width: 150px; height: 100px; object-fit: cover; border-radius: 12px; }
+
+/* =========================================
+   1. GLOBAL SETTINGS & VARIABLES
+   ========================================= */
+:root {
+    --bg-pink: #f9d4d8;
+    --navy: #4b2e2a;
+    --blue: #aed9f8;
+    --yellow: #fff0a2;
+    --pink-bright: #ff71a2;
+    --peach: #f8bbd0;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    background-color: var(--bg-pink);
+    color: var(--navy);
+    overflow-x: hidden;
+}
+
+/* =========================================
+   2. SHARED COMPONENTS (Navbar, Buttons, Lightbox)
+   ========================================= */
+.navbar {
+    display: flex; justify-content: space-between; align-items: center;
+    padding: 20px 5%; background: white;
+}
+
+.nav-links { display: flex; gap: 10px; }
+
+.nav-btn {
+    text-decoration: none; padding: 8px 15px; border-radius: 20px;
+    font-size: 0.7rem; font-weight: bold; color: var(--navy); border: 1px solid transparent;
+}
+
+.nav-btn.blue { background: var(--blue); }
+.nav-btn.yellow { background: var(--yellow); }
+.nav-btn.pink { background: var(--peach); }
+.nav-btn.blue-light { background: #d0ebff; }
+.nav-btn.outline { border: 1px solid var(--navy); }
+
+/* Lightbox Popup (Used in Gallery & Timeline) */
+.lightbox-overlay {
+    display: none; position: fixed; z-index: 10000;
+    left: 0; top: 0; width: 100%; height: 100%;
+    background-color: rgba(0,0,0,0.85); justify-content: center; align-items: center;
+}
+
+.lightbox-content {
+    max-width: 85%; max-height: 80vh; border: 5px solid white; border-radius: 10px;
+    animation: zoomIn 0.3s ease;
+}
+
+.close-btn {
+    position: absolute; top: 20px; right: 30px;
+    color: white; font-size: 40px; cursor: pointer;
+}
+
+@keyframes zoomIn { from {transform: scale(0.8); opacity: 0;} to {transform: scale(1); opacity: 1;} }
+
+/* =========================================
+   3. HOME PAGE (Hero & Info Boxes)
+   ========================================= */
+.hero { padding: 50px 5%; display: flex; justify-content: center; }
+.hero-container { display: grid; grid-template-columns: 1fr 1fr; align-items: center; max-width: 1100px; }
+.hero-content h1 { font-size: 3rem; line-height: 1; margin: 20px 0; }
+
+.highlight {
+    background: var(--blue); padding: 0 10px; border-radius: 5px;
+    display: inline-block; transform: rotate(-2deg);
+}
+
+.scalloped-image {
+    width: 400px; height: 400px; overflow: hidden;
+    mask-image: url('data:image/svg+xml;utf8,<svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg"><path fill="black" d="M40,-60C53.3,-53.3,66.7,-46.7,75.3,-35.3C84,-24,88,-8,85.3,6.7C82.7,21.3,73.3,34.7,62.7,45.3C52,56,40,64,26.7,70.7C13.3,77.3,-1.3,82.7,-16.7,80.7C-32,78.7,-48,69.3,-58.7,56C-69.3,42.7,-74.7,25.3,-76.7,6.7C-78.7,-12,-77.3,-32,-68,-48C-58.7,-64,-41.3,-76,-25.3,-80.7C-9.3,-85.3,5.3,-82.7,40,-60Z" transform="translate(100 100)" /></svg>');
+    mask-size: contain; mask-repeat: no-repeat;
+    -webkit-mask-image: url('data:image/svg+xml;utf8,<svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg"><path fill="black" d="M40,-60C53.3,-53.3,66.7,-46.7,75.3,-35.3C84,-24,88,-8,85.3,6.7C82.7,21.3,73.3,34.7,62.7,45.3C52,56,40,64,26.7,70.7C13.3,77.3,-1.3,82.7,-16.7,80.7C-32,78.7,-48,69.3,-58.7,56C-69.3,42.7,-74.7,25.3,-76.7,6.7C-78.7,-12,-77.3,-32,-68,-48C-58.7,-64,-41.3,-76,-25.3,-80.7C-9.3,-85.3,5.3,-82.7,40,-60Z" transform="translate(100 100)" /></svg>');
+    -webkit-mask-size: contain;
+}
+
+.scalloped-image img { width: 100%; height: 100%; object-fit: cover; }
+
+/* Ticker Marquee */
+.ticker { background: var(--navy); color: white; padding: 10px 0; overflow: hidden; white-space: nowrap; }
+.ticker-text { display: inline-block; padding-left: 100%; animation: marquee 20s linear infinite; font-weight: bold; }
+@keyframes marquee { 0% { transform: translate(0, 0); } 100% { transform: translate(-100%, 0); } }
+
+/* Info Sections */
+.find-here-section { padding: 60px 20px; background: repeating-linear-gradient(45deg, #fce4ec, #fce4ec 10px, #fdf2f4 10px, #fdf2f4 20px); text-align: center; }
+.box-container { display: flex; flex-direction: column; align-items: center; gap: 15px; margin-bottom: 50px; }
+.info-box { display: block; width: 100%; max-width: 450px; padding: 18px; border-radius: 15px; font-weight: 700; text-decoration: none; color: #333; box-shadow: 0 4px 10px rgba(0,0,0,0.05); }
+.info-box.blue { background: #b3e5fc; }
+.info-box.brown { background: #4e342e; color: white; }
+.info-box.peach { background: #f8bbd0; }
+.info-box.pink-bright { background: #f06292; color: white; }
+.info-box.yellow { background: #fff9c4; }
+
+/* =========================================
+   STYLE UNTUK BOX PROFIL (NAZU FIXED)
+   ========================================= */
+
+/* Section Utama */
+.main-content-section {
+    padding: 60px 5%;
+    background-color: #fdf2f4; /* Warna background luar kotak */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 40px;
+}
+
+/* Susunan 2 Kotak Atas */
+.content-wrapper {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+    width: 100%;
+    max-width: 1100px;
+}
+
+/* STYLES UNTUK SEMUA BOX (PUTIH & TIMBUL) */
+.card-box {
+    background: #ffffff !important;
+    padding: 35px;
+    border-radius: 25px;
+    box-shadow: 0 12px 30px rgba(0,0,0,0.06); /* Bayang supaya nampak 'Box' */
+    border: 1px solid #eee;
+    width: 100%;
+}
+
+/* Tajuk Dalam Box */
+.column-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.8rem;
+    color: #4b2e2a;
+    margin-bottom: 25px;
+    border-left: 6px solid #ff71a2; /* Garisan pink tepi tajuk */
+    padding-left: 15px;
+}
+
+/* Isi dalam 'More About Me' */
+.fact-item {
+    margin-bottom: 15px;
+    line-height: 1.6;
+}
+
+/* Social Media Box & Buttons */
+.social-links-container {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.soc-btn {
+    background: #aed9f8;
+    color: #4b2e2a;
+    padding: 12px 30px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: 0.3s ease;
+}
+
+.soc-btn:hover {
+    background: #ff71a2;
+    color: white;
+    transform: translateY(-3px);
+}
+
+/* Me In Frames / Gallery Box */
+.gallery-box-container {
+    max-width: 1100px;
+}
+
+/* RESPONSIVE: Untuk Skrin Phone */
+@media (max-width: 850px) {
+    .content-wrapper {
+        grid-template-columns: 1fr;
+    }
+    .social-links-container {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+/* --- FIX GALLERY 3 SEBARIS --- */
+
+.polaroid-grid {
+    display: grid !important;
+    grid-template-columns: repeat(3, 1fr) !important; /* Paksa 3 sebaris */
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.polaroid {
+    background: white;
+    padding: 10px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    border: 1px solid #eee;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.polaroid:hover {
+    transform: scale(1.02) rotate(2deg);
+}
+
+.polaroid img {
+    width: 100%;
+    height: 250px; /* Tinggi gambar sama rata */
+    object-fit: cover; /* Gambar tak penyet */
+    border-radius: 5px;
+}
+
+/* Responsive: Kalau buka kat Phone, jadi 1 atau 2 sebaris */
+@media (max-width: 768px) {
+    .polaroid-grid {
+        grid-template-columns: repeat(2, 1fr) !important;
+    }
+}
+/* =========================================
+   5. EDUCATION PAGE (Click to Show)
+   ========================================= */
+.edu-page { background-color: #fdf2f4; }
+.edu-card { background: white; display: flex; align-items: center; justify-content: space-between; padding: 25px; border-radius: 20px; margin-bottom: 20px; transition: 0.3s; border: 1px solid #ffe1e9; }
+.edu-card:hover { transform: translateY(-5px); border-color: #b2ce95; }
+
+.edu-info h3 { cursor: pointer; transition: 0.3s; }
+.edu-info h3:hover { color: #ff71a2; }
+
+.edu-image { display: none; margin-top: 15px; animation: fadeInEdu 0.5s ease; }
+.edu-image img { width: 180px; height: 120px; object-fit: cover; border-radius: 12px; border: 3px solid white; box-shadow: 0 4px 8px rgba(0,0,0,0.1); }
+
+@keyframes fadeInEdu { from { opacity: 0; transform: translateY(-10px); } to { opacity: 1; transform: translateY(0); } }
+
+/* =========================================
+   6. TIMELINE SECTION (Polkay Background)
+   ========================================= */
+.timeline-section {
+    padding: 80px 20px; background-image: url('polkay.jpg');
+    background-size: cover; background-attachment: fixed;
+    display: flex; flex-direction: column; align-items: center; width: 100%;
+}
+
+.timeline-wrapper { position: relative; max-width: 1000px; width: 100%; margin-top: 50px; }
+.timeline-line { position: absolute; left: 50%; transform: translateX(-50%); width: 4px; height: 100%; background-color: #4b2e2a; opacity: 0.2; }
+
+.timeline-item { display: flex; justify-content: flex-end; padding-left: 50%; margin-bottom: 50px; position: relative; width: 100%; }
+.timeline-item:nth-child(even) { justify-content: flex-start; padding-left: 0; padding-right: 50%; }
+
+.timeline-dot { position: absolute; left: 50%; top: 20px; transform: translateX(-50%); width: 16px; height: 16px; border-radius: 50%; z-index: 2; background: #ff71a2; border: 3px solid white; }
+
+.timeline-content { background: white; padding: 20px; border-radius: 20px; width: 85%; box-shadow: 0 5px 15px rgba(0,0,0,0.1); margin: 0 30px; text-align: center; }
+.timeline-img { width: 100%; height: 200px; object-fit: cover; border-radius: 12px; margin-bottom: 15px; border: 3px solid #fdf2f4; cursor: pointer; transition: 0.3s; }
+.timeline-img:hover { transform: scale(1.02); }
+
+/* =========================================
+   7. VOLUNTEER SECTION
+   ========================================= */
+.volunteer-section { padding: 80px 20px; background-color: white; text-align: center; }
+.volunteer-video-container { max-width: 750px; margin: 30px auto; border: 10px solid #fdf2f4; border-radius: 25px; overflow: hidden; }
+.volunteer-video { width: 100%; display: block; }
+.quotes-container { margin-top: 40px; padding: 30px; background-color: #fdf2f4; border-radius: 30px; display: inline-block; }
+.quote-text { font-family: 'Playfair Display', serif; font-size: 1.3rem; font-style: italic; color: #ff71a2; }
+
+/* =========================================
+   8. FAMILY PAGE (Fixed Grid & Image Size)
+   ========================================= */
+body.family-page {
+    background: repeating-linear-gradient(45deg, #eef7ff, #eef7ff 30px, #ffffff 30px, #ffffff 60px) !important;
+}
+
+.full-family-section { text-align: center; margin-bottom: 30px; padding-top: 40px; }
+.section-title { font-family: 'Playfair Display', serif; font-size: 2.5rem; margin-bottom: 25px; color: var(--navy); }
+
+/* Fix: The main big photo is no longer giant */
+.full-photo-box {
+    max-width: 400px; 
+    margin: 0 auto;
+    border: 12px solid white;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    border-radius: 10px;
+    overflow: hidden;
+}
+.full-photo-box img { width: 100%; height: auto; display: block; }
+
+/* Fix: Grid 3 columns & White boxes */
+.family-grid-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); 
+    gap: 25px;
+    max-width: 1100px;
+    margin: 40px auto;
+    padding: 0 20px;
+}
+
+.member-card {
+    background: white !important; 
+    padding: 30px 20px;
+    border-radius: 20px;
+    text-align: center;
+    border-bottom: 10px solid #fdfd96; 
+    box-shadow: 0 8px 20px rgba(0,0,0,0.08); 
+    display: block; 
+}
+
+.img-container {
+    width: 130px; height: 130px; 
+    margin: 0 auto 15px;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 5px solid #a5d8ff;
+}
+.img-container img { width: 100%; height: 100%; object-fit: cover; }
+
+.member-tag {
+    display: inline-block;
+    background: #fff3cd;
+    color: #856404;
+    padding: 4px 12px;
+    border-radius: 15px;
+    font-size: 11px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+/* =========================================
+   6. FAMILY PAGE (YANG BERMASALAH TADI)
+   ========================================= */
+body.family-page {
+    background: repeating-linear-gradient(45deg, #eef7ff, #eef7ff 30px, #ffffff 30px, #ffffff 60px);
+}
+
+.main-content { padding: 40px 5%; }
+
+/* FIX GAMBAR BESAR GEDABAK */
+.full-family-section { text-align: center; margin-bottom: 30px; }
+.section-title { font-family: 'Playfair Display', serif; font-size: 2.5rem; margin-bottom: 25px; color: var(--navy); }
+
+.full-photo-box {
+    max-width: 400px; /* Lock saiz kat sini supaya tak besar gila */
+    margin: 0 auto;
+    border: 12px solid white;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    border-radius: 10px;
+    overflow: hidden;
+}
+.full-photo-box img {
+    width: 100%; 
+    height: auto; 
+    display: block; 
+}
+
+/* FIX KOTAK TAK KELUAR & SUSUNAN 3 SEBARIS */
+.family-grid-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* Paksa 3 sebaris */
+    gap: 25px;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.member-card {
+    background: white !important; /* Pastikan background putih keluar */
+    padding: 30px 20px;
+    border-radius: 20px;
+    text-align: center;
+    border-bottom: 10px solid #fdfd96; /* Lemon Theme */
+    box-shadow: 0 8px 20px rgba(0,0,0,0.08); /* Bagi nampak bayang kotak */
+    display: block; /* Pastikan dia render sebagai block */
+}
+
+.img-container {
+    width: 130px; 
+    height: 130px; 
+    margin: 0 auto 15px;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 5px solid #a5d8ff;
+}
+.img-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.member-tag {
+    display: inline-block;
+    background: #fff3cd;
+    color: #856404;
+    padding: 4px 12px;
+    border-radius: 15px;
+    font-size: 11px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+/* =========================================
+   7. TIMELINE & VOLUNTEER (POLKAY BACKGROUND)
+   ========================================= */
+.timeline-section {
+    padding: 80px 20px;
+    background-image: url('polkay.jpg');
+    background-size: cover;
+    background-attachment: fixed;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
+.volunteer-section { 
+    padding: 100px 20px; 
+    background: white; 
+    text-align: center; 
+}
+
+.volunteer-video-container {
+    max-width: 700px;
+    margin: 0 auto;
+    border: 8px solid #fdf2f4;
+    border-radius: 20px;
+    overflow: hidden;
+}
+
+/* =========================================
+   8. RESPONSIVE (FOR PHONE)
+   ========================================= */
+@media (max-width: 800px) {
+    .hero-container, .profile-header-content, .edu-card { flex-direction: column; text-align: center; }
+    .family-grid-container { grid-template-columns: 1fr; } /* Phone jadi 1 baris */
+    .hero-image-wrapper img { width: 100%; }
+}
+/* =========================================
+   4. JADUAL ROUTINE (NEW)
+   ========================================= */
+.routine-section {
+    max-width: 900px;
+    margin: 60px auto;
+    padding: 40px;
+    background: white;
+    border-radius: 30px;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.05);
+    text-align: center;
+}
+
+.table-container {
+    overflow-x: auto;
+    margin-top: 20px;
+}
+
+.routine-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 14px;
+    text-align: left;
+}
+
+.routine-table th {
+    background-color: var(--blue);
+    color: var(--navy);
+    padding: 15px;
+    text-transform: uppercase;
+    font-size: 12px;
+}
+
+.routine-table td {
+    padding: 15px;
+    border-bottom: 1px solid #eee;
+}
+
+.routine-table tr:hover {
+    background-color: #fdf2f4;
+}
+
+.routine-table tr td:first-child {
+    font-weight: bold;
+    color: var(--pink-bright);
+}
+/* =========================================
+   9. RESPONSIVE (Mobile Fixes)
+   ========================================= */
+@media (max-width: 768px) {
+    .hero-container { grid-template-columns: 1fr; }
+    .scalloped-image { width: 300px; height: 300px; }
+    .polaroid-grid { grid-template-columns: repeat(2, 1fr); }
+    .timeline-line, .timeline-dot { left: 20px; }
+    .timeline-item, .timeline-item:nth-child(even) { padding-left: 45px; padding-right: 0; justify-content: flex-start; }
+    .timeline-content { width: 100%; margin: 0; }
+    .family-grid-container { grid-template-columns: 1fr; }
+    .edu-card { flex-direction: column; text-align: center; }
+/* ================= GALLERY SECTION ================= */
+
+.gallery-section {
+    padding: 70px 20px;
+    text-align: center;
+    background: #fdf2f4;
+}
+
+/* Polaroid kecil & kemas */
+.polaroid {
+    background: white;
+    padding: 10px;
+    border-radius: 12px;
+    box-shadow: 0 6px 15px rgba(0,0,0,0.08);
+    transition: 0.35s ease;
+    cursor: pointer;
+}
+
+.polaroid img {
+    width: 100%;
+    height: 220px; /* TAK besar gedabak */
+    object-fit: cover;
+    border-radius: 8px;
+    transition: 0.35s ease;
+}
+
+/* Efek gerak */
+.polaroid:hover {
+    transform: translateY(-8px) rotate(2deg);
+}
+
+/* ================= LIGHTBOX COMEL ================= */
+
+.lightbox-content {
+    border-radius: 22px;
+    box-shadow:
+        0 0 0 8px #ffffff,
+        0 0 0 16px #ffd1dc,
+        0 25px 60px rgba(0,0,0,0.35);
+}
+
+/* Responsive (phone) */
+@media (max-width: 768px) {
+    .polaroid img {
+        height: 180px;
+    }
+}
+

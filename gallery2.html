@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nazurah's Diaries</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <nav class="navbar">
+        <div class="logo">𝓷𝓪𝔃𝓾𝓻𝓪𝓱'𝓼 𝓭𝓲𝓪𝓻𝔂✩</div>
+        <div class="nav-links">
+            <a href="index.html" class="nav-btn blue">HOME</a>
+            <a href="about.html" class="nav-btn yellow">PROFILE</a>
+            <a href="edu.html" class="nav-btn pink">EDUCATION</a>
+            <a href="gallery.html" class="nav-btn blue-light">FAMILY</a>
+     <a href="gallery2.html" class="nav-btn yellow">GALLERY</a>
+        </div>
+    </nav>
+
+<!-- ===== GALLERY ===== -->
+<section class="gallery-section">
+    <h2 class="section-title">My Gallery ✿</h2>
+
+    <div class="polaroid-grid">
+        <!-- g1 - g20 -->
+        <div class="polaroid"><img src="g1.jfif" onclick="openLightbox(this.src)"></div>
+        <div class="polaroid"><img src="g2.jfif" onclick="openLightbox(this.src)"></div>
+        <div class="polaroid"><img src="g3.jfif" onclick="openLightbox(this.src)"></div>
+        <div class="polaroid"><img src="g4.jfif" onclick="openLightbox(this.src)"></div>
+        <div class="polaroid"><img src="g5.jfif" onclick="openLightbox(this.src)"></div>
+        <div class="polaroid"><img src="g6.jfif" onclick="openLightbox(this.src)"></div>
+        <div class="polaroid"><img src="g7.jfif" onclick="openLightbox(this.src)"></div>
+        <div class="polaroid"><img src="baru1.jfif" onclick="openLightbox(this.src)"></div>
+        <div class="polaroid"><img src="g9.jfif" onclick="openLightbox(this.src)"></div>
+        <div class="polaroid"><img src="g10.jfif" onclick="openLightbox(this.src)"></div>
+
+        <div class="polaroid"><img src="g11.jfif" onclick="openLightbox(this.src)"></div>
+        <div class="polaroid"><img src="g12.jfif" onclick="openLightbox(this.src)"></div>
+        <div class="polaroid"><img src="g13.jfif" onclick="openLightbox(this.src)"></div>
+        <div class="polaroid"><img src="g14.jfif" onclick="openLightbox(this.src)"></div>
+        <div class="polaroid"><img src="g15.jfif" onclick="openLightbox(this.src)"></div>
+        <div class="polaroid"><img src="g16.jfif" onclick="openLightbox(this.src)"></div>
+        <div class="polaroid"><img src="g17.jfif" onclick="openLightbox(this.src)"></div>
+        <div class="polaroid"><img src="g18.jfif" onclick="openLightbox(this.src)"></div>
+        <div class="polaroid"><img src="g19.jpg" onclick="openLightbox(this.src)"></div>
+        <div class="polaroid"><img src="baru3.jfif" onclick="openLightbox(this.src)"></div>
+        <div class="polaroid"><img src="baru2.jfif" onclick="openLightbox(this.src)"></div>
+    </div>
+</section>
+
+<!-- ===== LIGHTBOX ===== -->
+<div class="lightbox-overlay" id="lightbox">
+    <span class="close-btn" onclick="closeLightbox()">×</span>
+    <img class="lightbox-content" id="lightbox-img">
+</div>
+
+<!-- ===== SCRIPT ===== -->
+<script>
+function openLightbox(src) {
+    document.getElementById("lightbox").style.display = "flex";
+    document.getElementById("lightbox-img").src = src;
+}
+
+function closeLightbox() {
+    document.getElementById("lightbox").style.display = "none";
+}
+</script>
+
+<!-- ===== FOOTER ===== -->
+<footer>
+    <p>© 2025 Asri Nazurah. All rights reserved.</p>
+</footer>
+
+</body>
+</html>
